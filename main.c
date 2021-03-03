@@ -5,6 +5,7 @@
 *   Last modified by: Angel F. Garcia (2/19/2021)
 */
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
   long x = 10;
@@ -23,16 +24,18 @@ int main(void) {
     
     // TODO: Fix the code below.
     int x, y;
+    
     scanf("%d %d", &x, &y);
 
-    int x_digit = x / 10;
-    int y_digit = y / 10;
+    x = x / 10;
+    y = y / 10;
 
-    if(x_digit == y_digit) {
-      print("TRUE");
+    if(x == y) {
+      printf("TRUE");
     }
-
-    print("FALSE");
+    else{
+      printf("FALSE");
+    }
     
     /* Problem 1 End */
   } else if(opt == 2) {
@@ -43,9 +46,20 @@ int main(void) {
     char winner[5] = "7239";
     char ticket[5];
 
-    scanf("%s", ticket);
+    scanf(" %s", ticket);
     
-    // TODO: Your P2 code goes here
+    if (strcmp (ticket, "7239") == 0){
+        printf ("1st prize");
+    }
+    else if (strcmp (ticket, "0239") >= 0){
+        printf ("2nd prize");
+    }
+    else if (strcmp (ticket, "0039") <= 0){
+        printf ("3rd prize");
+    }
+    else{
+      printf ("No Prize! Better luck next time!\n");
+    }
     
     /* Problem 2 End */
   } else if(opt == 3) {
